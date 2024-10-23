@@ -1,6 +1,9 @@
 package ru.easyum.javajuniorspringtest.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "CLIENTS")
@@ -11,6 +14,10 @@ public class Client {
     private String name;
     private String email;
     private String phone;
+
+    @OneToMany(mappedBy = "client")
+    @JsonManagedReference
+    private List<Car> cars;
 
     public Client() {
 
@@ -48,6 +55,14 @@ public class Client {
         this.phone = phone;
     }
 
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
@@ -55,6 +70,7 @@ public class Client {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
+                ", cars=" + cars +
                 '}';
     }
 }

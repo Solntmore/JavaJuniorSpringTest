@@ -7,7 +7,6 @@ import ru.easyum.javajuniorspringtest.model.dto.ClientGetDto;
 import ru.easyum.javajuniorspringtest.model.dto.ClientUpdateDto;
 import ru.easyum.javajuniorspringtest.model.entity.Client;
 import ru.easyum.javajuniorspringtest.model.mappers.ClientsMapper;
-import ru.easyum.javajuniorspringtest.repository.ClientsInMemoryRepository;
 import ru.easyum.javajuniorspringtest.repository.ClientsRepository;
 
 import java.util.List;

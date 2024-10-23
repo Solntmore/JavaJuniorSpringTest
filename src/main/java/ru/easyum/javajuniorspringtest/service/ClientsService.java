@@ -3,6 +3,7 @@ package ru.easyum.javajuniorspringtest.service;
 import ru.easyum.javajuniorspringtest.model.dto.ClientCreateDto;
 import ru.easyum.javajuniorspringtest.model.dto.ClientGetDto;
 import ru.easyum.javajuniorspringtest.model.dto.ClientUpdateDto;
+import ru.easyum.javajuniorspringtest.model.entity.Car;
 
 import java.util.List;
 
