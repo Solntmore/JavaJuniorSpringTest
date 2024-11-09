@@ -2,6 +2,7 @@ package ru.easyum.javajuniorspringtest.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 
 @Entity
 @Table(name = "CARS")
@@ -9,7 +10,7 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String brand;
     private String model;
     private String number;
@@ -20,11 +21,11 @@ public class Car {
     @JsonBackReference
     private Client client;
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -2,6 +2,7 @@ package ru.easyum.javajuniorspringtest.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.easyum.javajuniorspringtest.exceptions.ClientNotFoundException;
 import ru.easyum.javajuniorspringtest.model.dto.ClientCreateDto;
 import ru.easyum.javajuniorspringtest.model.dto.ClientGetDto;
 import ru.easyum.javajuniorspringtest.model.dto.ClientUpdateDto;
@@ -41,7 +42,8 @@ public class ClientsServiceImpl implements ClientsService {
 
     @Override
     public ClientGetDto get(Integer id) {
-        Client client = clientsRepository.getById(id);
+        Client client = clientsRepository.findById(id).orElseThrow(()
+                -> new ClientNotFoundException("Clint with id " + id + " not found"));
         return clientsMapper.fromEntityToGetDto(client);
     }
 
